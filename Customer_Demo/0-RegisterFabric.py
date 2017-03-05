@@ -24,14 +24,14 @@ def registerFabric(md):
 	fabricNodeIdentP4 = cobra.model.fabric.NodeIdentP(fabricNodeIdentPol, serial='TEP-1-104', name='spine2', nodeId='104')
 
 	c = cobra.mit.request.ConfigRequest()
-	print toXMLStr(ctrlrInst)
+	# print toXMLStr(ctrlrInst)
 	c.addMo(ctrlrInst)
 	md.commit(c)
 
 
 # log into an APIC and create a directory object
-ep = cobra.mit.access.EndPoint('172.23.3.215', secure=False, port=80)
-ls = cobra.mit.session.LoginSession('admin', 'ins3965!')
+ep = cobra.mit.access.EndPoint('ip', secure=False, port=80)
+ls = cobra.mit.session.LoginSession('admin', 'password')
 md = cobra.mit.access.MoDirectory(ep, ls)
 md.login()
 
