@@ -20,17 +20,11 @@ requests.packages.urllib3.disable_warnings()
 
 
 def logen():
-    ls = cobra.mit.session.LoginSession('https://<ip>', 'apic#fallback\\<user_name>', '<password>')
+    ls = cobra.mit.session.LoginSession('https://apic_ip', 'apic_username', 'password')
     md = cobra.mit.access.MoDirectory(ls)
     md.login()
     return md
 
 """
-# LSC Login
-def logen():
-    ls = cobra.mit.session.LoginSession('https://10.92.97.203', 'admin', 'cisc0123')
-    md = cobra.mit.access.MoDirectory(ls)
-    md.login()
-    return md
 
-"""
+
