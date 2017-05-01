@@ -19,6 +19,9 @@ for item in items:
     dn = str(item.dn)
     # print dn
     portl = re.findall("if-\[(.*)\]/adj", dn)
-    nodel = re.findall("pod-1/(.*)/sys", dn)
+    if re.search("pod-1", dn):
+        node = re.findall("pod-1/(.*)/sys", dn)
+    if re.search("pod-2", dn):
+        node = re.findall("pod-2/(.*)/sys", dn)
 
-    print template.format(item.sysName, nodel[0] , portl[0], item.portId)
+    print template.format(item.sysName, node[0] , portl[0], item.portId)

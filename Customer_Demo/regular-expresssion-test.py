@@ -24,3 +24,14 @@ for line in hand:
      print line   #  all lines having From:  gets printed out
 
 """
+
+line1 = "uni/tn-SM-Demo/ap-Filip/epg-filip1/to-[uni/tn-SM-Demo/ap-APP1/epg-WEB2]-subj-[uni/tn-SM-Demo/brc-Filip1/subj-filip1]-flt-564"
+
+stppos = line1.find("/to")
+print stppos
+output = line1[0:stppos]   # this works.   Using slicing,  from beginning to stppos
+print "Output: ", output
+print "C-Tenant:", re.findall("tn-(.*?)/", output)  # re.findall makes a list
+print "C-App Profile: ", re.findall("/ap-(.*?)/", output)
+print "C-EPG: ", re.findall("/epg-(.+)", output)  #  .+ is repeat any character many times
+print " Contract Name: ", re.findall("brc-(.*?)/", line1)
