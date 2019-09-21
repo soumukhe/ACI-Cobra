@@ -149,7 +149,7 @@ def printws():
 def refresh():
     # This module refreshes the subscription.  Default Timeout for refresh is 60 seconds as also hardcoded in the subscription module "refresh-timeout=60"
     while True:
-        time.sleep(45)
+        time.sleep(30)
         # refresh subscription  -- fvTenant
         tenant_refresh_url = "https://" + APIC + "/api/subscriptionRefresh.json?id={}".format(tenant_subscription_id)
         tenant_refresh_response = requests.get(tenant_refresh_url, verify=False, cookies=cookie)
